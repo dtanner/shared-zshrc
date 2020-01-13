@@ -144,6 +144,8 @@ function removeFromPath() {
 jdk 11
 
 alias gw='nocorrect ./gradlew'
+alias gwckc='if ! ktlint; then ./gradlew clean ktlintFormat check; else ./gradlew clean check; fi'
+alias gwkc='if ! ktlint; then ./gradlew ktlintFormat check; else ./gradlew check; fi'
 
 ## DOCKER/KUBERNETES ######################################################
 alias dc="docker-compose"
