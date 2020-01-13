@@ -99,6 +99,7 @@ alias sslcerthash=': SSL print out the hash for a certificate; openssl x509 -has
 ## VERSION CONTROL ############################################################################################################
 
 alias g='git'
+alias gl='git pull'
 alias gcam="git commit -v -am"
 alias gs="git st"
 alias grh="git reset --hard"
@@ -149,6 +150,10 @@ alias gwkc='if ! ktlint; then ./gradlew ktlintFormat check; else ./gradlew check
 
 ## DOCKER/KUBERNETES ######################################################
 alias dc="docker-compose"
+# docker remove all containers
+function drma () {
+  [[ -z $(docker ps -aq) ]] || docker rm -f $(docker ps -aq)
+}
 
 alias k="kubectl"
 alias kcc="kubectl --context"
