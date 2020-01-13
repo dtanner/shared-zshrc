@@ -267,6 +267,8 @@ else
   echo "missing fzf: brew install fzf ripgrep bat"
 fi
 
+bindkey '^[[A' fzf-history-widget
+
 ## Antibody ZSH Plugins
 
 if command -v antibody >/dev/null 2>&1; then
