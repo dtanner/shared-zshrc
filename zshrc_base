@@ -25,7 +25,7 @@ alias pwp='pwd -P'
 alias absimple='ab -n 100 -c 10 -g gnuplot.tsv'
 
 
-export VIM_EDITOR=mvim
+export VIM_EDITOR=vim
 alias v='$VIM_EDITOR'
 alias vz='v $ZSHDIR'
 
