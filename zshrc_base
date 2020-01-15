@@ -269,6 +269,9 @@ fi
 
 bindkey '^[[A' fzf-history-widget
 
+# set -o vi
+set -o emacs
+
 ## Antibody ZSH Plugins
 
 if command -v antibody >/dev/null 2>&1; then
