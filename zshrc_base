@@ -270,7 +270,8 @@ fi
 bindkey '^[[A' fzf-history-widget
 
 # set -o vi
-set -o emacs
+# emacs mode doesn't appear compatible with history
+# set -o emacs
 
 ## Antibody ZSH Plugins
 
