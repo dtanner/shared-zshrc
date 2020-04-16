@@ -104,6 +104,7 @@ alias gcam="git commit -v -am"
 alias gs="git st"
 alias grh="git reset --hard"
 alias grs="git reset --soft"
+alias gco="git checkout"
 
 alias gd="git diff"
 alias gdt="git diff"
@@ -268,6 +269,21 @@ else
 fi
 
 bindkey '^[[A' fzf-history-widget
+
+########## TAP
+
+function taplogs() {
+  env=${2:-dev}
+  cluster=$1
+  echo "Finding instances for cluster $cluster in $env"
+  instance=$(tapctl list instances "$cluster" -e "$env" -o json | jq '.[0].id' -r)
+  echo "Found $instance"
+  echo "tapctl logs $instance -f --tail 10 - -e $env"
+  tapctl logs "$instance" -f -e $"env"--tail 10 | jq .message -r
+}
+
+
+##########
 
 # set -o vi
 # emacs mode doesn't appear compatible with history
